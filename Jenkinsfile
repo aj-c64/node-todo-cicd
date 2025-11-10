@@ -7,7 +7,7 @@ pipeline {
 
   stages {
 
-    stage('Checkout Code') {
+    stage('Code') {
       agent { label 'node-agent' }
       steps {
         git url: 'https://github.com/aj-c64/node-todo-cicd.git', branch: 'master'
@@ -41,3 +41,4 @@ pipeline {
     failure { echo 'Build failed.' }
   }
 }
+
