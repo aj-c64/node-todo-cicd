@@ -26,6 +26,12 @@ pipeline {
             }
         }
 
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t node-todo:latest .'
+            }
+        }
+        
         stage('Package Artifact') {
             steps {
                 sh 'tar -czf node-app.tar.gz --exclude=node_modules --exclude=.git .'
